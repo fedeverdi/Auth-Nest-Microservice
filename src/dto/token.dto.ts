@@ -1,3 +1,8 @@
+import { IsString, IsOptional, IsNotEmpty } from 'class-validator';
+
 export class TokenDto {
-    token: string|null;
+  @IsString()
+  @IsOptional()
+  @IsNotEmpty()
+  token: string | null;
 }
