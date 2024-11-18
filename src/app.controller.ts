@@ -36,6 +36,7 @@ export class AppController {
   @MessagePattern({ service: 'auth-service', cmd: 'get-user' })
   async getUser(id: string) {
     const user = await this.appService.getUserById(id);
+
     if (!user) {
       throw new RpcException(
         {
