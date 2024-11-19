@@ -71,12 +71,12 @@ export class AppService {
 
   // Ottieni un utente per ID
   async getUserById(id: string): Promise<User | null> {
-    return this.userModel.findById(id).exec();
+    return this.userModel.findById(id);
   }
 
   // Aggiorna i dati di un utente
   async updateUser(id: string, updateUserDto: UpdateUserDto): Promise<User> {
-    const user = await this.userModel.findByIdAndUpdate(id, updateUserDto, { new: true }).exec();
+    const user = await this.userModel.findByIdAndUpdate(id, updateUserDto, { new: true });
     if (!user) {
       throw new RpcException(
         {
@@ -89,7 +89,7 @@ export class AppService {
   }
 
   async getUserByEmail(email: string): Promise<User> {
-    const user = await this.userModel.findOne({ email }).exec(); // Cerca l'utente tramite email
+    const user = await this.userModel.findOne({ email }); // Cerca l'utente tramite email
     if (!user) {
       throw new RpcException(
         {

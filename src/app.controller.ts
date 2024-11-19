@@ -19,9 +19,7 @@ export class AppController {
 
   @MessagePattern({ service: 'auth-service', cmd: 'get-me' })
   async getMe(token: TokenDto) {
-    const response = await this.appService.getUserByToken(token);
-    console.log(token);
-    return response;
+    return await this.appService.getUserByToken(token);
   }
 
   @MessagePattern({ service: 'auth-service', cmd: 'register-user' })

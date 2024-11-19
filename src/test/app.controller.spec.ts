@@ -1,12 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { RpcException } from '@nestjs/microservices';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { LoginDto } from './dto/login.dto';
-import { TokenDto } from './dto/token.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './models/user.model';
+import { AppController } from '../app.controller';
+import { AppService } from '../app.service';
+import { CreateUserDto } from '../dto/create-user.dto';
+import { LoginDto } from '../dto/login.dto';
+import { TokenDto } from '../dto/token.dto';
+import { UpdateUserDto } from '../dto/update-user.dto';
+import { User } from '../models/user.model';
 
 describe('AppController', () => {
   let appController: AppController;
