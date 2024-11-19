@@ -68,7 +68,7 @@ describe('AppService', () => {
       });
 
       expect(bcrypt.hash).toHaveBeenCalledWith('password', 10);
-      expect(mockUserModel.exists).toHaveBeenCalledWith({ email: 'test@test.com' });
+      expect(mockUserModel.exists).toHaveBeenCalledWith({ email: createUserDto.email });
     });
 
     it('should throw RpcException if user already exists', async () => {
